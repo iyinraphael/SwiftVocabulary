@@ -12,9 +12,10 @@ class WordsTableViewController: UITableViewController {
 
     var vocaWords = [VocabularyWord]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createArraysOfVocabulary()
     }
 
     // MARK: - Table view data source
@@ -35,12 +36,28 @@ class WordsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ShowDefinitionSegue" {
+        if segue.identifier == "ShowDefinitionViewController" {
             let dvc = segue.destination as! DefinitionViewController
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
             dvc.vocabWord = vocaWords[indexPath.row]
+            
         }
     }
-
+    
+    // MARK: - CRUD
+    
+    func createVocabulary(_ word: String, _ definition: String) -> VocabularyWord {
+        let vocabulary = VocabularyWord(word: word, definition: definition)
+        return vocabulary
+    }
+    
+    func createArraysOfVocabulary() {
+        let dictVocabulary = ["Variable" : "A value used to store information. It's mutable",
+                              "Constant" : "A value used to store informatiuon. It's not mutable",
+                              "Function" : "A set of logical steps used to manupulate object to get desirable out" ]
+        for (key,value) in dictVocabulary {
+            vocaWords.append(createVocabulary(key, value))
+        }
+    }
 
 }

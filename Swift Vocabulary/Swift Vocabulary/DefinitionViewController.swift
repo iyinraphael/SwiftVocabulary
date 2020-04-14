@@ -21,7 +21,14 @@ class DefinitionViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var definitionTextView: UITextView!
     
-    func  updateView() {
+    func updateView() {
+        if !isViewLoaded {return}
+        
+        if let vocabWord = vocabWord {
+            definitionTextView.textColor = .black
+            wordLabel.text = vocabWord.word
+            definitionTextView.text = vocabWord.definition
+        }
         
     }
     

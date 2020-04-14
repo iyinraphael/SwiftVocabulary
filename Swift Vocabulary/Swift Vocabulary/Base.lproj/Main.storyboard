@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Words Table View Controller-->
+        <!--Word Vocabulary-->
         <scene sceneID="D93-mr-HMq">
             <objects>
                 <tableViewController id="ehH-HF-xsW" customClass="WordsTableViewController" customModule="Swift_Vocabulary" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="ehH-HF-xsW" id="FV2-lb-dYy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yci-0g-cKo"/>
+                    <navigationItem key="navigationItem" title="Word Vocabulary" id="yci-0g-cKo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRF-GS-feV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,30 +56,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fa6-s9-DmL">
-                                <rect key="frame" x="0.0" y="98" width="414" height="172"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq5-IW-LCe">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jfO-aF-m0I">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq5-IW-LCe">
+                                <rect key="frame" x="0.0" y="121" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jfO-aF-m0I">
+                                <rect key="frame" x="0.0" y="177" width="414" height="172"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Fa6-s9-DmL" firstAttribute="leading" secondItem="fyx-7m-DXp" secondAttribute="leading" id="FNl-qu-iZH"/>
-                            <constraint firstItem="fyx-7m-DXp" firstAttribute="trailing" secondItem="Fa6-s9-DmL" secondAttribute="trailing" id="xac-qi-PML"/>
-                            <constraint firstItem="Fa6-s9-DmL" firstAttribute="top" secondItem="fyx-7m-DXp" secondAttribute="top" constant="10" id="y3Z-N9-Gaq"/>
+                            <constraint firstItem="gq5-IW-LCe" firstAttribute="leading" secondItem="fyx-7m-DXp" secondAttribute="leading" id="2Gl-sv-MxI"/>
+                            <constraint firstItem="jfO-aF-m0I" firstAttribute="top" secondItem="gq5-IW-LCe" secondAttribute="bottom" constant="20" id="5nb-nY-N9L"/>
+                            <constraint firstItem="gq5-IW-LCe" firstAttribute="top" secondItem="B5r-kO-OQv" secondAttribute="topMargin" constant="-19" id="8Wq-g0-eqY"/>
+                            <constraint firstItem="jfO-aF-m0I" firstAttribute="trailing" secondItem="gq5-IW-LCe" secondAttribute="trailing" id="RCW-te-KIO"/>
+                            <constraint firstItem="gq5-IW-LCe" firstAttribute="centerX" secondItem="B5r-kO-OQv" secondAttribute="centerX" id="mJf-Bt-yd9"/>
+                            <constraint firstItem="jfO-aF-m0I" firstAttribute="leading" secondItem="gq5-IW-LCe" secondAttribute="leading" id="rrU-5y-9rr"/>
+                            <constraint firstItem="fyx-7m-DXp" firstAttribute="bottom" secondItem="jfO-aF-m0I" secondAttribute="bottom" constant="513" id="wZ6-2H-GwU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fyx-7m-DXp"/>
                     </view>
@@ -91,15 +90,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwt-hB-qyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="68"/>
+            <point key="canvasLocation" x="1905.7971014492755" y="67.633928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5aw-dA-9TZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="31S-sR-LmS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dDd-9g-iYe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dDd-9g-iYe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
